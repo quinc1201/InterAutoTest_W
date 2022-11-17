@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 import requests
+from utils.LogUtil import my_log
 
 
 # get方法封装
@@ -34,19 +35,30 @@ def requests_post(url, headers=None, json=None):
 
 # 重构request
 class Request:
-    def request_api(self, url, data=None, headers=None, method='get'):
+    def __init__(self):
+        self.log = my_log('Requests')
+
+    def request_api(self, url, json=None, headers=None, cookies=None, method='get'):
         if method == 'get':
             # 执行get请求
-            r = requests.get(url=url, headers=headers, params=data)
+            self.log.debug('发送get请求')
+            r = requests.get(url=url, headers=headers, params=json, cookies=cookies)
         elif method == 'post':
             # 执行post请求
-            r = requests.post(url=url, headers=headers, json=data)
+            self.log.debug('发送post请求')
+            r = requests.post(url=url, headers=headers, json=json, cookies=cookies)
         # 返回字典
-        code = r.status_code
+        # code = r.status_code
         try:
-            body = r.json()
+            code = r.json()['code']
+            if 'result' in r.json():
+                body = r.json()['result']
+            else:
+                body = r.json()['message']
         except Exception as e:
+            code = r.status_code
             body = r.text
+            print(e)
         res = dict()
         res['code'] = code
         res['body'] = body

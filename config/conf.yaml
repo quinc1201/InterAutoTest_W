@@ -1,0 +1,15 @@
+BASE:
+  #log级别
+  log_level: "debug"
+  #日志文件扩展名
+  log_extension: ".log"
+  test:
+    url: "https://api.apiopen.top/api"
+    case_file: "testdata.xls"
+    case_sheet: "接口测试"
+
+email:
+  smtpserver: "smtp.163.com"
+  username: "quincy1116@163.com"
+  password: "WBKPZIHYYZYPAVBG"
+  receiver: "quincy1116@163.com"

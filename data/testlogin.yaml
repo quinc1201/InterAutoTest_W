@@ -1,0 +1,25 @@
+# 登录测试用例
+
+---
+# 测试用例名称
+"case_name": "登录成功用例"
+# url地址
+"url": "/login"
+# data
+"data":
+  account: "quincy20221009@outlook.com"
+  "password": "ydg123456"
+# 期望结果
+"experct": '"id": 471, "account": "quincy20221009@outlook.com"'
+
+---
+# 测试用例名称
+"case_name": "登录失败用例"
+# url地址
+"url": "/login"
+# data
+"data":
+  account: "quincy20221009@outlook.com"
+  "password": "ydg12345678"
+# 期望结果
+"experct": '"id": 471, "account": "quincy20221009@outlook.com"'

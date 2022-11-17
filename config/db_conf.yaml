@@ -1,0 +1,8 @@
+#编写相关信息
+db_1:
+  db_host: '192.168.204.128'
+  db_user: 'quincy'
+  db_password: 'quincy1201'
+  db_name: 'movie_cat'
+  db_charset: 'utf8'
+  db_port: '3306'
