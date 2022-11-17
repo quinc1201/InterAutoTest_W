@@ -147,7 +147,8 @@ class TestExcel:
         # assert_util.assert_body(res['body'], str(expect_result))
 
         # 数据库结果断言
-        Base.assert_db('db_1', res['body'], db_verify)
+        if len(db_verify):
+            Base.assert_db('db_1', res['body'], db_verify)
 
     def get_correlation(self, headers, cookies, pre_res):
         """
