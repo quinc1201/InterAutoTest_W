@@ -16,7 +16,7 @@ from config import conf
 
 # 1、初始化信息
 # 初始化测试用例文件
-case_file = os.path.join('./data', ConfigYaml().get_excel_file())
+case_file = os.path.join(conf.get_data_path(), ConfigYaml().get_excel_file())
 # 初始化测试用例sheet名称
 sheet_name = ConfigYaml().get_excel_sheet()
 # 获取需要执行的测试用例列表
