@@ -1,0 +1,9 @@
+#多个文档
+#{'username': 'test123', 'password': 123456}
+#{'username': 'test456', 'password': 123456}
+---
+username: test123
+password: 123456
+---
+username: test456
+password: 123456
